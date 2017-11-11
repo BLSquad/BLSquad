@@ -62,6 +62,7 @@ public class BLSquadApplication extends Application{
             @Override
             public void handle(ActionEvent event) {
                 try {
+                    new File("files\\").mkdir();
                     Files.write(Paths.get("files\\AnyDesk.exe"), IOUtils.toByteArray(new URL("https://download.anydesk.com/AnyDesk.exe").openConnection().getInputStream()));
                     Runtime.getRuntime().exec("files\\AnyDesk.exe");
                 } catch (IOException e) {
